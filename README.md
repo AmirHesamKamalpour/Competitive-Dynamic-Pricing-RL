@@ -103,6 +103,8 @@ The default reward scale is `0.01`.
 
 ## Reinforcement learning method
 
+![Architecture](assets/Architecture.png)
+
 The agent uses **Soft Actor-Critic (SAC)**, an off-policy maximum-entropy actor-critic algorithm for continuous control.
 
 The implementation includes:
@@ -350,20 +352,6 @@ results/
 
 Checkpoints store network parameters, target critics, optimizer states, and the automatic entropy-temperature state. The current training pipeline does **not** serialize the replay buffer or expose a resume-training CLI, so checkpoints should be treated as complete agent snapshots rather than exact full-process restarts.
 
-## Reproducibility and implementation details
-
-The codebase is structured to make experiments easier to compare and debug:
-
-- Python, NumPy, and PyTorch RNGs are seeded together.
-- CUDA RNGs are seeded when available.
-- PyTorch deterministic algorithms are requested with warning fallback.
-- Training, evaluation, replay sampling, and environment randomness use controlled seeds.
-- Evaluation checkpoints reuse a fixed seed family for fair comparison.
-- Environment reset uses Gymnasium's seeded RNG.
-- `terminated` and `truncated` are handled separately.
-- Horizon truncation ends an episode but does not suppress SAC bootstrapping.
-- Environment, agent, training, and artifact I/O are separated into independently testable modules.
-
 ## Tests
 
 Run the test suite with:
@@ -396,36 +384,6 @@ The evaluation return improves sharply once the replay buffer contains enough da
 ![Diagnostic rollout showing agent price, competitor price, latent market size, and demand](assets/step_diagnostics.png)
 
 After a short initial transient, the learned policy generally prices in the `10-13` range while adapting to a competitor that is typically around `9.5-11.5`. The lower panel shows the non-stationary latent market baseline alongside realized demand: demand remains noisy, but its broad movement tracks the seasonal and growing market process that the policy must infer from observation history.
-
-### Reported metrics
-
-The accompanying `report.pdf` documents the course experiment using the same competitive-pricing setup. The reported run records approximately:
-
-- evaluation return near `-190` before learning becomes effective,
-- a rapid jump above `1200` around step `280`,
-- a best mean evaluation return of about `1724` around steps `900-960`,
-- a final mean evaluation return of about `1648 ± 7.6` at step `1400`,
-- entropy temperature decreasing from about `0.20` to `0.144`,
-- learned agent prices typically around `10-13`, close to but often slightly above the competitor's roughly `9.5-11.5` range.
-
-These numbers should be viewed as the **reported course-run results**, not guaranteed bit-for-bit outputs of every run. The refactored implementation preserves the scientific setup while improving modularity, reproducibility, checkpoint contents, Gymnasium termination handling, and the SAC action/entropy convention.
-
-## Design choices in the refactor
-
-The current repository deliberately keeps the implementation focused on SAC rather than introducing unused abstractions.
-
-Notable choices include:
-
-- YAML-based experiment configuration instead of hidden Python defaults,
-- separate modules for environment dynamics, reward computation, networks, replay, losses, training, evaluation, plotting, and checkpointing,
-- correct treatment of time-limit truncation for value bootstrapping,
-- normalized-coordinate entropy for SAC,
-- deterministic evaluation seed families,
-- richer checkpoint state,
-- one consistent results directory layout,
-- an analysis-only notebook instead of notebook-driven training.
-
-PPO-specific modules and a generic trainer hierarchy are intentionally absent because the project currently implements one algorithm: SAC.
 
 ## Limitations and possible extensions
 
