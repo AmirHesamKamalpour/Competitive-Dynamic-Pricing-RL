@@ -1,0 +1,24 @@
+{
+  "seed": 7,
+  "total_steps": 1400,
+  "start_steps": 200,
+  "update_after": 100,
+  "update_every": 1,
+  "updates_per_step": 1,
+  "eval_every": 20,
+  "eval_episodes": 5,
+  "device": "cpu",
+  "sac_cfg": {
+    "gamma": 0.99,
+    "tau": 0.005,
+    "lr": 0.0003,
+    "batch_size": 256,
+    "replay_size": 1000000,
+    "hidden_sizes": [
+      256,
+      256
+    ],
+    "auto_alpha": true,
+    "init_alpha": 0.2
+  }
+}

@@ -1,0 +1,21 @@
+project:
+  algorithm: sac
+  seed: 0
+  run_name: sac_pricing_seed0
+
+configs:
+  environment: env.yaml
+  agent: sac.yaml
+
+training:
+  total_steps: 1400
+  start_steps: 200
+  update_after: 100
+  update_every: 1
+  updates_per_step: 1
+  eval_every: 20
+  eval_episodes: 5
+  checkpoint_every: 20
+
+output:
+  results_dir: results

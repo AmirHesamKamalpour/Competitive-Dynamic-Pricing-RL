@@ -1,0 +1,12 @@
+[project]
+name = "competitive-pricing-rl"
+version = "0.1.0"
+description = "Course project: competitive dynamic pricing with Soft Actor-Critic"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

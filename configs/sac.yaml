@@ -1,0 +1,11 @@
+agent:
+  gamma: 0.99
+  tau: 0.005
+  learning_rate: 0.0003
+  batch_size: 256
+  replay_size: 1000000
+  hidden_sizes: [256, 256]
+  auto_entropy_tuning: true
+  initial_alpha: 0.2
+  target_entropy: null
+  device: auto
