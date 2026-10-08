@@ -409,6 +409,7 @@ The SAC implementation is based on the maximum-entropy actor-critic formulation 
 ## Authors
 
 **Amirhesam Kamalpour**
+
 **Fateme Roshani**  
 
 Reinforcement Learning Final Project, School of Electrical and Computer Engineering, University of Tehran, 2026.
