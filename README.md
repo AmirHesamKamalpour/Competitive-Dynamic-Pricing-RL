@@ -4,6 +4,16 @@ A reinforcement learning project for **competitive dynamic pricing under stochas
 
 The project includes a custom Gymnasium environment, a modular SAC implementation in PyTorch, reproducible training and evaluation pipelines, checkpointing, experiment configuration through YAML, automated plots, tests, and an analysis notebook.
 
+## Authors & Contributors
+
+This project was jointly developed by:
+
+- **[Aida roshani](https://github.com/Aaidaro)**
+- **[AmirHesam Kamalpour](https://github.com/AmirHesamKamalpour)**
+
+Both authors collaboratively contributed to the design, implementation, and development of this project.
+
+
 ## Overview
 
 At each time step, the agent chooses a price for a single product. A competitor then sets its own price using an autoregressive reaction model, demand is realized, and the agent receives profit minus a penalty for changing its price too aggressively.
