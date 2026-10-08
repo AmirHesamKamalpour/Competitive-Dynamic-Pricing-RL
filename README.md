@@ -416,10 +416,4 @@ The SAC implementation is based on the maximum-entropy actor-critic formulation 
 
 > Tuomas Haarnoja, Aurick Zhou, Pieter Abbeel, and Sergey Levine. **Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor.** ICML 2018, arXiv:1801.01290.
 
-## Authors
-
-**Amirhesam Kamalpour**
-
-**Fateme Roshani**  
-
 Reinforcement Learning Final Project, School of Electrical and Computer Engineering, University of Tehran, 2026.
