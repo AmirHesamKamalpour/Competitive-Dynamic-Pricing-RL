@@ -13,6 +13,16 @@ This project was jointly developed by:
 
 Both authors collaboratively contributed to the design, implementation, and development of this project.
 
+<p align="left">
+  <img
+    src="https://thumb.wikimedia.org/wikipedia/en/thumb/f/fd/University_of_Tehran_logo.svg/1280px-University_of_Tehran_logo.svg.png"
+    alt="University of Tehran"
+    width="45"
+    align="center"
+  />
+  &nbsp;&nbsp;
+  <strong>School of Electrical and Computer Engineering, University of Tehran — 2026</strong>
+</p>
 
 ## Overview
 
@@ -415,14 +425,3 @@ Natural extensions include:
 The SAC implementation is based on the maximum-entropy actor-critic formulation introduced in:
 
 > Tuomas Haarnoja, Aurick Zhou, Pieter Abbeel, and Sergey Levine. **Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor.** ICML 2018, arXiv:1801.01290.
-
-<p align="left">
-  <img
-    src="https://thumb.wikimedia.org/wikipedia/en/thumb/f/fd/University_of_Tehran_logo.svg/1280px-University_of_Tehran_logo.svg.png"
-    alt="University of Tehran"
-    width="45"
-    align="center"
-  />
-  &nbsp;&nbsp;
-  <strong>School of Electrical and Computer Engineering, University of Tehran — 2026</strong>
-</p>
